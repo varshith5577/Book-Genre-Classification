@@ -29,7 +29,7 @@ The project includes the following files:
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/varshith5577/Book-Genre-Classification>
    cd Book-Genre-classification
 
 2. **Install Dependencies**:
