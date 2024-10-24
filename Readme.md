@@ -66,11 +66,11 @@ The machine learning model predicts the genre of a book based on its description
 
 To run this project, you need the following dependencies:
 
-**Python 3.11.7**
-**Flask: For creating the web app.**
-**pandas: For handling data operations**.
-**scikit-learn: For TF-IDF vectorization and machine learning models**.
-**pickle: To load the pre-trained model**.
+**Python 3.11.7**  
+**Flask:** For creating the web app.  
+**pandas:** For handling data operations.  
+**scikit-learn:** For TF-IDF vectorization and machine learning models.  
+**pickle:** To load the pre-trained model.  
 
 Install these dependencies using:
 
