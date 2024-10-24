@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Genre Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://wallpapers.com/images/hd/library-art-book-theme-rth0ek661fi3zdwz.jpg');
+            /* Reference to the image file */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.6);
+            /* Overlay with transparency */
+            height: 100vh;
+            /* Fill the entire viewport height */
+            width: 100%;
+            /* Fill the entire viewport width */
+            display: flex;
+            flex-direction: column;
+            /* Align items in column */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            /* Add margin between buttons */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .result {
+            font-weight: bold;
+            /* Make result text bold */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h1>Book Genre Predictor</h1>
+            <p>Welcome to the Book Genre Predictor, where you can predict the genre of a book!</p>
+
+            <!-- Form -->
+            <h2 class="my-4 text-center">Book Genre Prediction</h2>
+            <form class="my-4" id="predictionForm" action="/" method="POST">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Enter the Summary of the Book</label>
+                    <textarea class="form-control" id="summary" name="summary" rows="3"></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                    <button type="button" id="resetButton" class="btn btn-secondary">New Prediction</button>
+                </div>
+            </form>
+
+            <!-- Display Result -->
+            <div id="predictionResult" class="container my-4">
+                {% if showresult %}
+                <div class="alert alert-success" role="alert">
+                    <p class="result">Your Summary : <span id="summaryText">{{text}}</span></p>
+                    <p class="result">Predicted Genre for the summary is : <span style="color:#0c36f0;font-size:1rem;"
+                            id="genre">{{genre}}</span></p>
+                    <hr>
+                </div>
+                {% endif %}
+            </div>
+            <!-- End of Display Result -->
+        </div>
+    </div>
+
+    <!-- JavaScript to handle button click -->
+    <script>
+        document.getElementById('resetButton').addEventListener('click', function () {
+            document.getElementById('summary').value = ''; // Clear the summary text area
+            document.getElementById('predictionResult').innerHTML = ''; // Clear the prediction result
+        });
+    </script>
+</body>
+
+</html>
