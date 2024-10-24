@@ -51,8 +51,9 @@ python app.py
 
 ## Model Files
 
-**book_genre_model.pkl**: The pre-trained machine learning model for genre prediction.
-**tfidf_vectorizer.pkl**: The pre-trained TF-IDF vectorizer for transforming book description text data.
+**book_genre_model.pkl:** The pre-trained machine learning model for genre prediction.  
+**tfidf_vectorizer.pkl:** The pre-trained TF-IDF vectorizer for transforming book description text data.
+
 
 ## Dataset
 
